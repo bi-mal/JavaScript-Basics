@@ -53,3 +53,25 @@ console.log(array3);
             return numbers.join("");
           }
 
+//Problem 4: List filtering
+
+function filter_list(l) {
+  // Return a new array with the strings filtered out
+  return l.filter((element)=> typeof element=='number')
+}
+
+//Problem 5: Our football team has finished the championship.
+  //Our team's match results are recorded in a collection of strings.
+  //Each match is represented by a string in the format "x:y", 
+  //where x is our team's score and y is our opponents score.
+
+  function points(games) {
+    let points=0;
+    for(let i=0;i<games.length;i++){
+      if(games[i].charAt(0)>games[i].charAt(2))
+        points=points+3;
+      else if(games[i].charAt(0)==games[i].charAt(2))
+        points=points+1;
+    }
+    return points;
+  }

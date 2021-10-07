@@ -93,3 +93,22 @@ function filter_list(l) {
       return "Player 2 won!";
     }
   };
+
+  //Problem 7: Write a function, persistence, that takes in a positive parameter num
+    //and returns its multiplicative persistence, which is the number of times 
+    //you must multiply the digits in num until you reach a single digit.
+
+    function persistence(num) {
+      //code me
+      let digits=num.toString().split('').map(Number);
+      let result=0;
+      let recursion=0;
+      while(digits.length>1){
+          result=digits.reduce((prev,current)=>prev*current);
+          digits=result.toString().split('').map(Number);
+          recursion++;
+      }
+      console.log(recursion);
+   }
+  
+   persistence(999);

@@ -75,3 +75,21 @@ function filter_list(l) {
     }
     return points;
   }
+
+  //Problem 6: Rock, paper, scissors
+  //Let's play! You have to return which player won! In case of a draw return Draw!.
+
+  let rps = (p1, p2) => {
+    if (p1 === p2) return "Draw!";
+    let rules = {
+      rock: "scissors", 
+      paper: "rock", 
+      scissors: "paper"
+    };
+    if (p2 === rules[p1]) {
+      return "Player 1 won!";
+    }
+    else {
+      return "Player 2 won!";
+    }
+  };

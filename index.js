@@ -112,3 +112,38 @@ function filter_list(l) {
    }
   
    persistence(999);
+
+   //stopWatch Problem
+
+   function StopWatch(){
+    let duration=0;
+    let initial=0;
+    let isStarted=false;
+    let isResetted=true;
+
+    this.start= function(){
+        if(isStarted){
+            throw new Error('it is already started');
+        }
+        initial=Date.now();
+        isStarted=true;
+        isResetted=false;
+    }
+    this.stop= function(){
+        if(!isStarted){
+            throw new Error('it is already stopped');
+        }
+        duration=duration+(Date.now()-initial)/1000;
+        isStarted=false;
+        isResetted=false;
+    }
+    this.reset=function(){
+        duration=0;
+        isResetted=true;
+    }
+    Object.defineProperty(this,'duration',{
+        get: function(){
+            return duration;
+        }
+    })
+}
